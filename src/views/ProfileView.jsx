@@ -1,23 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useBackend } from "../state/use-backend";
+import LoadingIndicator from "../components/LoadingIndicator";
+import ErrorMessage from "../components/ErrorMessage";
+import ProfileUI from "../components/ProfileUI";
 
 const ProfileView = ({ match }) => {
-  const { data, error, isLoading } = useBackend(match.params.uname);
+  const { uname } = match.params;
+  const { data, error, isLoading } = useBackend(uname);
 
-  const body = (() => {
-    if (isLoading) return <div>loading...</div>;
-
-    if (error) return <div>{error.message}</div>;
-
-    return (
-      <div>
-        name: {data.name}
-        <br />
-        surname: {data.surname}
-      </div>
-    );
-  })();
+  const createBody = () => {
+    if (isLoading) return <LoadingIndicator />;
+    if (error) return <ErrorMessage message={error.message} />;
+    return <ProfileUI {...data} />;
+  };
 
   return (
     <div>
@@ -31,7 +27,7 @@ const ProfileView = ({ match }) => {
         </li>
       </ul>
       <hr />
-      <div>{body}</div>
+      <div>{createBody()}</div>
     </div>
   );
 };
