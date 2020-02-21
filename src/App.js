@@ -1,9 +1,14 @@
 import React from "react";
 import { HashRouter as Router, Route } from "react-router-dom";
+import "./styles.css";
+
+/**
+ * VIEWS
+ * Read more about views in `docs/VIEWS.md`
+ */
 import ProfileView from "./views/ProfileView";
 import EditView from "./views/EditView";
 import HomeView from "./views/HomeView";
-import "./styles.css";
 
 export default function App() {
   return (

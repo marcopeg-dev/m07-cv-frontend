@@ -8,6 +8,9 @@ const HomeView = ({ match }) => {
         <li>
           <Link to="/marcopeg">Open Marcopeg</Link>
         </li>
+        <li>
+          <Link to="/luke-skywalker">Open Luke Skywalker</Link>
+        </li>
       </ul>
     </div>
   );
