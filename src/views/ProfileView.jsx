@@ -1,11 +1,11 @@
 import React from "react";
-import { useBackend } from "../state/use-backend";
+// import { useBackend } from "../state/use-backend";
 
 /**
  * LAYOUTS
  * Read more about views in `docs/LAYOUTS.md`
  */
-import ProfileViewLayout from "../layouts/ProfileViewLayout";
+// import ProfileViewLayout from "../layouts/ProfileViewLayout";
 
 /**
  * COMPONENTS
@@ -17,15 +17,15 @@ import ProfileUI from "../components/ProfileUI";
 
 const ProfileView = ({ match }) => {
   const { uname } = match.params;
-  const { data, error, isLoading } = useBackend(uname);
+  // const { data, error, isLoading } = useBackend(uname);
 
-  const createBody = () => {
-    if (isLoading) return <LoadingIndicator />;
-    if (error) return <ErrorMessage message={error.message} />;
-    return <ProfileUI {...data} />;
-  };
+  // const createBody = () => {
+  //   if (isLoading) return <LoadingIndicator />;
+  //   if (error) return <ErrorMessage message={error.message} />;
+  //   return <ProfileUI {...data} />;
+  // };
 
-  return <ProfileViewLayout uname={uname}>{createBody()}</ProfileViewLayout>;
+  // return <ProfileViewLayout uname={uname}>{createBody()}</ProfileViewLayout>;
 };
 
 export default ProfileView;

@@ -1,5 +1,5 @@
 import React from "react";
 
-const LoadingIndicator = () => <div>loading...</div>;
+const LoadingIndicator = () => <div>.....</div>;
 
 export default LoadingIndicator;
