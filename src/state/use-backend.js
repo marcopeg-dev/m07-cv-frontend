@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
 
 export const useBackend = uname => {
-  const [users, setUsers] = useState([]);
+  const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Fetch users
+  // Fetch user data when the username change
   useEffect(() => {
     const load = async () => {
       setIsLoading(true);
       setError(null);
       try {
-        const res = await fetch(`https://m07.herokuapp.com/`);
+        const res = await fetch(`https://m07.herokuapp.com/${uname}`);
         const data = await res.json();
-        console.log(data);
-        setUsers(data);
+        setData(data);
       } catch (err) {
         console.error(err);
         setError(new Error("could not load profile"));
@@ -24,12 +23,11 @@ export const useBackend = uname => {
     };
 
     load();
-    console.log("effect has been run");
-  }, []);
+  }, [uname]);
 
   return {
     isLoading,
-    users,
+    data,
     error
   };
 };
