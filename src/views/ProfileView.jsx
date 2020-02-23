@@ -26,8 +26,6 @@ const ProfileView = ({ match }) => {
   };
 
   return <ProfileViewLayout uname={uname}>{createBody()}</ProfileViewLayout>;
-
-  return 123;
 };
 
 export default ProfileView;

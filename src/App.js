@@ -11,10 +11,9 @@ import EditView from "./views/EditView";
 import HomeView from "./views/HomeView";
 
 export default function App() {
-  console.log("APP");
   return (
     <Router>
-      {/* <Route exact path="/:uname/edit" component={EditView} /> */}
+      <Route exact path="/:uname/edit" component={EditView} />
       <Route exact path="/:uname" component={ProfileView} />
       <Route exact path="/" component={HomeView} />
     </Router>
