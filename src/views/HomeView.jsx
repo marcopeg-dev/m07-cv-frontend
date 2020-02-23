@@ -13,7 +13,9 @@ const HomeView = ({ uname }) => {
             <div key={user.id}>
               <Link to={`/${user.id}`}>
                 <li>
-                  <h2 className="homeview-user-names">{user.id} </h2>
+                  <h2 className="homeview-user-names">
+                    {user.name} {user.surname}
+                  </h2>
                 </li>
               </Link>
             </div>
