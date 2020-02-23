@@ -5,25 +5,18 @@ import ErrorMessage from "../components/ErrorMessage";
 import { useBackend } from "../state/use-backend";
 
 const HomeView = ({ match }) => {
-  console.log("home");
-
   const { users, error, isLoading } = useBackend();
-  console.log(users);
+
+  if (isLoading) return <LoadingIndicator />;
+  if (error) return <ErrorMessage message={error.message} />;
+
   const dataUsersLi = users.map(user => (
-    <li>
-      <Link to={`/${user.id}`}>{user.data.name}</Link>
+    <li key={`user-${user.id}`}>
+      <Link to={`/${user.id}`}>{user.name}</Link>
     </li>
   ));
-  const createBody = () => {
-    if (isLoading) return <LoadingIndicator />;
-    if (error) return <ErrorMessage message={error.message} />;
-    return (
-      <div>
-        <ul>{dataUsersLi}</ul>
-      </div>
-    );
-  };
-  return <>{createBody()}</>;
+
+  return <ul>{dataUsersLi}</ul>;
 };
 
 export default HomeView;
