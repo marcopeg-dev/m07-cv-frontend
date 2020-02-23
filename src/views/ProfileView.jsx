@@ -25,7 +25,11 @@ const ProfileView = ({ match }) => {
     return <ProfileUI {...data} />;
   };
 
-  return <ProfileViewLayout uname={uname}>{createBody()}</ProfileViewLayout>;
+  return (
+    <ProfileViewLayout uname={uname} error={error}>
+      {createBody()}
+    </ProfileViewLayout>
+  );
 };
 
 export default ProfileView;
