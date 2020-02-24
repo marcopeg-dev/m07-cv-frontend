@@ -23,27 +23,19 @@ const EditView = ({ match, children, uname }) => {
 
   return (
     <div>
-      <div> <h3>edit {match.params.uname}</h3>
-        <form onSubmit={onSubmit}>
-          <label>Name</label>
-          <input value={match.params.name} name='name' type="text" onChange={onChange}></input>
-          {/* {users.map(function (user, i) {
-            console.log(user.id)
-            return (
-              user.id === match.params.uname ?
-                <input value={user.name} name='name' type="text" onChange={onChange} /> :
-                <input value={''}
-                />
-            )
-          })
-          } */}
-          <label>Surname</label>
-          <input value={match.params.surname} name='name' type="text" onChange={onChange}></input>
-
-          <button>Save</button>
+      <div>
+        <h3>edit {match.params.uname}</h3>
+        <form onSubmit={onSubmit} >
+          <label>Name
+            <input name='name' type="text" onChange={onChange} placeholder={match.params.name}></input>
+          </label>
+          <label>Surname
+            <input name='name' type="text" onChange={onChange} placeholder={match.params.surname}></input>
+          </label>
+          < button >Save</button>
         </form>
         <Link to={`/${match.params.uname}`}>View profile</Link></div>
-    </div>
+    </div >
   );
 };
 
