@@ -1,1 +1,1 @@
-export { default } from "./HomeViewUsers";
+export { default } from "./Users";

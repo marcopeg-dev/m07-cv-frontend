@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { UsersList } from "../state/use-users-list";
-import "../components/HomeViewUsers/users.css";
+import Users from "../components/HomeViewUsers";
 
 const HomeView = ({ uname }) => {
   const { users } = UsersList(uname);
@@ -11,21 +10,13 @@ const HomeView = ({ uname }) => {
       <ul>
         {users.length > 0 ? (
           users.map(user => (
-            <div key={user.id} className="home-view-users">
-              <Link to={`/${user.id}`}>
-                <li>
-                  <img
-                    src={user.profile_pic}
-                    alt={`${user.name}'s profile pic`}
-                  />
-                  <h2>
-                    {user.name} <br />
-                    {user.surname}
-                  </h2>
-                  <div className="button" />
-                </li>
-              </Link>
-            </div>
+            <Users
+              key={user.id}
+              userId={user.id}
+              name={user.name}
+              surname={user.surname}
+              profilePic={user.profile_pic}
+            />
           ))
         ) : (
           <div>
