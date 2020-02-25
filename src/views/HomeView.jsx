@@ -1,6 +1,7 @@
 import React from "react";
 import { UsersList } from "../state/use-users-list";
 import Users from "../components/HomeViewUsers";
+import LoadingIndicator from "../components/LoadingIndicator";
 
 const HomeView = ({ uname }) => {
   const { users } = UsersList(uname);
@@ -19,10 +20,10 @@ const HomeView = ({ uname }) => {
             />
           ))
         ) : (
-          <div>
-            <h2 className="site-heading">There are no users to display</h2>
-          </div>
-        )}
+            <div>
+              <h2 className="site-heading">{<LoadingIndicator />}</h2>
+            </div>
+          )}
       </ul>
     </div>
   );
