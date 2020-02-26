@@ -1,8 +1,10 @@
 .img__user {
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   border-radius: 50%;
   border: 2px solid #04a9e0;
+
+
 }
 
 h2 {
@@ -14,7 +16,7 @@ h2 {
 .view__users {
   display: grid;
   width: 400px;
-  height: 120px;
+  height: 130px;
   border: solid 1px rgb(241, 241, 241);
   /* border: solid 1px rgb(63, 58, 58); */
   background-color: #f4f4f4;
