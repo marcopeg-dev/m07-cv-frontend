@@ -11,9 +11,9 @@ const HomeView = ({ uname }) => {
         {users.length > 0 ? (
           users.map(user => (
             <div key={user.id}>
-              <Link to={`/${user.id}`}>
+              <Link className="link_home" to={`/${user.id}`}>
                 <li>
-                  <h2 className="homeview-user-names">
+                  <h2 className="h2_homeview-user-names">
                     {user.name} {user.surname}
                   </h2>
                 </li>
@@ -22,7 +22,7 @@ const HomeView = ({ uname }) => {
           ))
         ) : (
           <div>
-            <h2 className="site-heading">There are no users to display</h2>
+            <h2 className="h2_site-heading">There are no users to display</h2>
           </div>
         )}
       </ul>

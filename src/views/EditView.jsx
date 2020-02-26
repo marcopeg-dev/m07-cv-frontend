@@ -4,38 +4,45 @@ import { useBackend } from "../state/use-backend";
 import { updateUser } from "../state/update-user";
 
 const EditView = ({ match }) => {
-  const initialFormState = { name: "", surname: "" };
+  const cleanFormState = { name: "", surname: "", profile_pic: "" };
   const { uname } = match.params;
   const { data } = useBackend(uname);
-  const [edit, setEdit] = useState([]);
   const user = { ...data };
+  const [edit, setEdit] = useState({ user });
 
   const onChange = event => {
     const { name, value } = event.target;
     setEdit({ ...edit, [name]: value });
-    console.log(edit);
   };
 
   const onSubmit = event => {
     event.preventDefault();
-    console.log(edit, "uname", uname);
     updateUser(uname, edit);
-    setEdit(initialFormState);
+    setEdit(cleanFormState);
   };
 
   return (
     <div>
-      <h2 className="edit-profile">Edit user: {match.params.uname}</h2>
-      <h4 className="edit-profile">Name: {user.name}</h4>
-      <h4 className="edit-profile">Surname: {user.surname}</h4>
+      <h2 className="h2_edit-profile">Edit user: {match.params.uname}</h2>
+      <h4 className="h4_edit-profile">Name: {user.name}</h4>
+      <h4 className="h4_edit-profile">Surname: {user.surname}</h4>
+      <Link className="link__edit" to={`/${match.params.uname}`}>
+        Cancel
+      </Link>
       <form onSubmit={onSubmit}>
         <label className="label__edit">Name: </label>
-        <input className="input__edit" name="name" onChange={onChange}></input>
+        <input
+          value={edit.name}
+          className="input__edit"
+          name="name"
+          onChange={onChange}
+        ></input>
         <br />
         <label className="label__edit">Surname: </label>
         <input
           className="input__edit"
           name="surname"
+          value={edit.surname}
           onChange={onChange}
         ></input>
         <br />
@@ -43,6 +50,7 @@ const EditView = ({ match }) => {
         <input
           className="input__edit"
           name="profile_pic"
+          value={edit.profile_pic}
           onChange={onChange}
         ></input>
         <br />
