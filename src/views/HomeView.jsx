@@ -4,12 +4,16 @@ import { UsersList } from "../state/use-users-list";
 
 const HomeView = ({ uname }) => {
   const { users } = UsersList(uname);
+  var filteredUsers = users.filter(function (user) {
+    return user.id !== "undefined";
+  });
+
 
   return (
     <div>
       <ul>
-        {users.length > 0 ? (
-          users.map(user => (
+        {filteredUsers.length > 0 ? (
+          filteredUsers.map(user => (
             <div key={user.id}>
               <Link className="link_home" to={`/${user.id}`}>
                 <li>
@@ -21,10 +25,10 @@ const HomeView = ({ uname }) => {
             </div>
           ))
         ) : (
-          <div>
-            <h2 className="h2_site-heading">There are no users to display</h2>
-          </div>
-        )}
+            <div>
+              <h2 className="h2_site-heading">There are no users to display</h2>
+            </div>
+          )}
       </ul>
     </div>
   );
