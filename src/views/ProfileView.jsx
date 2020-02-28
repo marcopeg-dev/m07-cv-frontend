@@ -17,6 +17,7 @@ import ProfileUI from "../components/ProfileUI";
 
 const ProfileView = ({ match }) => {
   const { uname } = match.params;
+  console.log(uname);
   const { data, error, isLoading } = useBackend(uname);
 
   const createBody = () => {
