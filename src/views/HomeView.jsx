@@ -5,12 +5,13 @@ import LoadingIndicator from "../components/LoadingIndicator";
 
 const HomeView = ({ uname }) => {
   const { users } = UsersList(uname);
+  const filterdUsers = users.filter(user => user.id !== "undefined")
 
   return (
     <div>
       <ul>
-        {users.length > 0 ? (
-          users.map(user => (
+        {filterdUsers.length > 0 ? (
+          filterdUsers.map(user => (
             <Users
               key={user.id}
               userId={user.id}
