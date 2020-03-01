@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchBox = ({ searchInput, searchChanges }) => {
+const SearchBox = ({ searchInput, searchChanges, focusSearch }) => {
 
   return (
 
@@ -8,6 +8,7 @@ const SearchBox = ({ searchInput, searchChanges }) => {
       <input
         value={searchInput}
         onChange={searchChanges}
+        ref={focusSearch}
         type="search"
         name="search"
         placeholder="Search user..."

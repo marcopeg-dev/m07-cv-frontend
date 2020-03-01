@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { UsersList } from "../state/use-users-list";
 import SearchBox from "../components/SearchBox/SearchBox";
-import UserListView from "../layouts/HomeViewLayout/UserListView";
 import UsersListLayout from "../layouts/HomeViewLayout/UsersListLayout";
 
 const HomeView = ({ uname }) => {
   const { users } = UsersList(uname);
   const [searchInput, setSearchInput] = useState("");
-  const [searchResults, setSearchResults] = useState([users]); //don't know how to display all the users as initial state, this is not working
+  const [searchResults, setSearchResults] = useState({ users }); //don't know how to display all the users as initial state, this is not working
+  const focusSearch = useRef(null)
+
+  // useEffect - FOCUS ON SEARCH INPUT
+  useEffect(() => { focusSearch.current.focus() }, [])
 
   const handleChange = e => {
     setSearchInput(e.target.value);
@@ -23,7 +26,7 @@ const HomeView = ({ uname }) => {
 
   return (
     <div>
-      <SearchBox searchChanges={handleChange} />
+      <SearchBox searchChanges={handleChange} focusSearch={focusSearch} />
       <UsersListLayout props={searchResults} />
     </div>
   );

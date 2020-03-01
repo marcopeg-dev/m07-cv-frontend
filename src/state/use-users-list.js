@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-export const UsersList = props => {
+export const UsersList = () => {
   const [users, setUsers] = useState([]);
-  const [hasError, setErrors] = useState(false);
+  //const [hasError, setErrors] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -20,22 +20,4 @@ export const UsersList = props => {
 };
 
 
-//   useEffect(() => {
-//     async function fetchData() {
-//       const res = await fetch("https://swapi.co/api/planets/4/");
-//       res
-//         .json()
-//         .then(res => setPlanets(res))
-//         .catch(err => setErrors(err));
-//     }
 
-//     fetchData();
-//   });
-//     return (
-//     <div>
-//       <span>{JSON.stringify(planets)}</span>
-//       <hr />
-//       <span>Has error: {JSON.stringify(hasError)}</span>
-//     </div>
-//   );
-// };
