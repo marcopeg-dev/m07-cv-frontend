@@ -6,7 +6,7 @@ import UsersListLayout from "../layouts/HomeViewLayout/UsersListLayout";
 const HomeView = ({ uname }) => {
   const { users } = UsersList(uname);
   const [searchInput, setSearchInput] = useState("");
-  const [searchResults, setSearchResults] = useState({ users }); //don't know how to display all the users as initial state, this is not working
+  const [searchResults, setSearchResults] = useState([]);
   const focusSearch = useRef(null)
 
   // useEffect - FOCUS ON SEARCH INPUT
@@ -22,7 +22,7 @@ const HomeView = ({ uname }) => {
       user.id.toString().toLowerCase().includes(searchInput)
     );
     setSearchResults(filteredUsers);
-  }, [searchInput]);
+  }, [users, searchInput]);
 
   return (
     <div>
