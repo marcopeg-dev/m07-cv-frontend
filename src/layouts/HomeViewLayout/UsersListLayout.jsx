@@ -1,11 +1,11 @@
 import React from "react";
 //import LoadingIndicator from "../../components/LoadingIndicator";
 import UserListView from "./UserListView";
-
+import "./UserListView.css";
 
 const UsersListLayout = ({ props }) => {
   return (
-    <ul>
+    <ul className="users-list__container">
       {
         props.map(user => (user.id !== "undefined" && (
           <UserListView
