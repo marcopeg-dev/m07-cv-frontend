@@ -2,15 +2,62 @@
   font-family: sans-serif;
   text-align: center;
 }
-.homeview-user-names    {
-    font-family: Arial, Helvetica, sans-serif;
-    text-transform: capitalize;
+.homeview-user-names {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   color: black;
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+}
+
+.editview {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.editview__header {
+  text-align: center;
+}
+
+.editview__form {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.editview__label {
+  margin-bottom: 1vh;
+  /* background-color: fuchsia; */
+}
+
+.editview__input {
+  /* background-color: blue;*/
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #777;
+}
+
+.editview__input,
+.editview__label {
+  display: block;
+  width: 100%;
+}
+
+.editview__button {
+  padding: 10px 15px;
+  background-color: rgb(70, 153, 179);
+  color: white;
+  border: 1px solid rgb(70, 153, 179);
+}
+
+.editview__button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: rgb(70, 153, 179);
 }
