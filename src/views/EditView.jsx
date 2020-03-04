@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FetchUsers } from "../state/fetch-users
+import { FetchUsers } from "../state/fetch-users";
 import "../styles.css";
 
 const EditView = ({ match, children, uname }) => {
