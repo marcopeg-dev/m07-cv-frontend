@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const UsersList = uname => {
+export const FetchUsers = uname => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {

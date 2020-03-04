@@ -1,10 +1,10 @@
 import React from "react";
-import { UsersList } from "../state/use-users-list";
+import { FetchUsers } from "../state/fetch-users";
 import Users from "../components/HomeUsersView";
 import LoadingIndicator from "../components/LoadingIndicator";
 
 const HomeView = ({ uname }) => {
-  const { users } = UsersList(uname);
+  const { users } = FetchUsers(uname);
 
   return (
     <div>

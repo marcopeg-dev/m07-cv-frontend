@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { UsersList } from "../state/use-users-list";
+import { FetchUsers } from "../state/fetch-users
 import "../styles.css";
 
 const EditView = ({ match, children, uname }) => {
-  const { users } = UsersList(uname);
+  const { users } = FetchUsers(uname);
   const initalFormState = {};
   const [value, setValue] = useState("hi");
 
