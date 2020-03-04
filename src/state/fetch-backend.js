@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const fetchBackend = uname => {
+const FetchBackend = uname => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -31,3 +31,5 @@ export const fetchBackend = uname => {
     error
   };
 };
+
+export default FetchBackend;

@@ -1,5 +1,5 @@
 import React from "react";
-import { fetchBackend } from "../state/fetch-backend";
+import fetchBackend from "../state/fetch-backend";
 
 /**
  * LAYOUTS
@@ -17,7 +17,7 @@ import ProfileUI from "../components/ProfileUI";
 
 const ProfileView = ({ match }) => {
   const { uname } = match.params;
-  const { data, error, isLoading } = useBackend(uname);
+  const { data, error, isLoading } = fetchBackend(uname);
 
   const createBody = () => {
     if (isLoading) return <LoadingIndicator />;
