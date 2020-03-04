@@ -17,12 +17,13 @@ a:visited {
   display: inline-block;
 }
 
-.div__profile-view-background {
+.profile-view__background {
   background-color: lightgrey;
-   background: url(https://img.lemde.fr/2019/04/22/0/191/1619/1079/688/0/60/0/e39da8d_2FIads9h8wB-0SwSgxVaVWsp.jpg) lightgrey top center no-repeat;
-    background-size: 300px, contain;
-    margin-top: 70px;
-    margin-left: 100px;
+  background: url(https://img.lemde.fr/2019/04/22/0/191/1619/1079/688/0/60/0/e39da8d_2FIads9h8wB-0SwSgxVaVWsp.jpg)
+    lightgrey top center no-repeat;
+  background-size: 300px, contain;
+  margin-top: 70px;
+  margin-left: 100px;
   display: flex;
   justify-content: center;
   width: 300px;
@@ -31,14 +32,7 @@ a:visited {
   border-radius: 10px 10px;
 }
 
-.div__background-image {
-  height: 150px;
-  position: absolute;
-  width: 100%;
-
-}
-
-.img__profile-view {
+.profile-view__image {
   border-radius: 50%;
   border: solid white 5px;
   position: absolute;
@@ -47,13 +41,13 @@ a:visited {
   margin-top: 100px;
 }
 
-.h2__profile-view {
+.profile-view__title {
   font-family: Helvetica;
   text-transform: capitalize;
   color: #2f4f4f;
   margin-top: 250px;
 }
 
-h2__profile-heading {
- color: #2f4f4f;
+.profile-view_heading {
+  color: #2f4f4f;
 }
