@@ -6,16 +6,15 @@ const HomeView = ({ uname }) => {
   const { users } = UsersList(uname);
   var filteredUsers = users.filter(user => user.id !== "undefined");
 
-
   return (
     <div>
       <ul>
         {filteredUsers.length > 0 ? (
           filteredUsers.map(user => (
             <div key={user.id}>
-              <Link className="link_home" to={`/${user.id}`}>
+              <Link className="home-view__link" to={`/${user.id}`}>
                 <li>
-                  <h2 className="h2_homeview-user-names">
+                  <h2 className="home-view__user-names">
                     {user.name} {user.surname}
                   </h2>
                 </li>
@@ -23,10 +22,10 @@ const HomeView = ({ uname }) => {
             </div>
           ))
         ) : (
-            <div>
-              <h2 className="h2_site-heading">There are no users to display</h2>
-            </div>
-          )}
+          <div>
+            <h2 className="h2_site-heading">There are no users to display</h2>
+          </div>
+        )}
       </ul>
     </div>
   );

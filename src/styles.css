@@ -3,13 +3,13 @@
   text-align: center;
 }
 
-.h2_homeview-user-names {
+.home-view__user-names {
   font-family: Helvetica, sans-serif;
   text-transform: capitalize;
 }
 
-.link_home,
-.link_home:visited {
+.home-view__link,
+.home-view__link:visited {
   color: black;
   padding: 14px 25px;
   text-align: center;
@@ -17,19 +17,19 @@
   display: inline-block;
 }
 
-.h2_edit-profile {
+.edit-profile__heading {
   font-family: Helvetica, sans-serif;
   text-transform: capitalize;
   letter-spacing: 1px;
 }
 
-.h4_edit-profile {
+.edit-profile__user-name {
   font-family: Helvetica, sans-serif;
   text-transform: capitalize;
   letter-spacing: 1px;
 }
 
-.label__edit {
+.edit-profile__label {
   font-family: Helvetica, sans-serif;
   font-size: 20px;
   display: flex;
@@ -38,13 +38,13 @@
   margin-bottom: 10px;
 }
 
-.input__edit {
+.edit-profile__input {
   margin: 10px;
   height: 25px;
   border-radius: 4px;
 }
 
-.btn__edit {
+.edit-profile__update--btn {
   font-family: Helvetica, sans-serif;
   margin-top: 20px;
   background-color: grey;
@@ -54,7 +54,7 @@
   height: 50px;
 }
 
-.link__edit {
+.edit-profile__link {
   font-family: Helvetica, sans-serif;
   margin-top: 15px;
   margin-right: 25px;
@@ -68,8 +68,8 @@
   display: inline-block;
 }
 
-.link_profile-view,
-.link_profile-view:visited {
+.profile-view__link,
+.profile-view__link:visited {
   font-family: Helvetica, sans-serif;
   color: black;
   text-transform: capitalize;
