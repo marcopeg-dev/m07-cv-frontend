@@ -18,9 +18,12 @@ const HomeView = ({ uname }) => {
   //I’ve trying to figure it out if it’s possible to managing the state outside the home view.jsx. But couldn't make it
 
   useEffect(() => {
-    const filteredUsers = users.filter(user =>
-      user.id.toString().toLowerCase().includes(searchInput)
-    );
+    const filteredUsers = users.filter(user => {
+      return (
+        user.name.toString().toLowerCase().includes(searchInput) ||
+        user.surname.toString().toLowerCase().includes(searchInput)
+      );
+    });
     setSearchResults(filteredUsers);
   }, [users, searchInput]);
 
