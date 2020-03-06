@@ -5,26 +5,28 @@ import LoadingIndicator from "../components/LoadingIndicator";
 
 const HomeView = ({ uname }) => {
   const { users } = UsersList(uname);
-  const filterdUsers = users.filter(user => user.id !== "undefined")
+  const filteredUsers = users.filter(user => user.id !== "undefined");
 
   return (
     <div>
       <ul>
-        {filterdUsers.length > 0 ? (
-          filterdUsers.map(user => (
-            <Users
-              key={user.id}
-              userId={user.id}
-              name={user.name}
-              surname={user.surname}
-              profilePic={user.profile_pic}
-            />
+        {filteredUsers.length > 0 ? (
+          filteredUsers.map(user => (
+            <div key={user.id}>
+              <Link className="home-view__link" to={`/${user.id}`}>
+                <li>
+                  <h2 className="home-view__user-names">
+                    {user.name} {user.surname}
+                  </h2>
+                </li>
+              </Link>
+            </div>
           ))
         ) : (
-            <div>
-              <h2 className="site-heading">{<LoadingIndicator />}</h2>
-            </div>
-          )}
+          <div>
+            <h2 className="h2_site-heading">There are no users to display</h2>
+          </div>
+        )}
       </ul>
     </div>
   );
