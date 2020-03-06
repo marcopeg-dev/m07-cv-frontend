@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { UsersList } from "../state/use-users-list";
+import Users from "../components/HomeUsersView";
+import LoadingIndicator from "../components/LoadingIndicator";
 
 const HomeView = ({ uname }) => {
   const { users } = UsersList(uname);
