@@ -12,19 +12,17 @@ const HomeView = ({ uname }) => {
       <ul>
         {filteredUsers.length > 0 ? (
           filteredUsers.map(user => (
-            <div key={user.id}>
-              <Link className="home-view__link" to={`/${user.id}`}>
-                <li>
-                  <h2 className="home-view__user-names">
-                    {user.name} {user.surname}
-                  </h2>
-                </li>
-              </Link>
-            </div>
+            <Users
+              key={user.id}
+              userId={user.id}
+              name={user.name}
+              surname={user.surname}
+              profilePic={user.profile_pic}
+            />
           ))
         ) : (
           <div>
-            <h2 className="h2_site-heading">There are no users to display</h2>
+            <h2 className="site-heading">{<LoadingIndicator />}</h2>
           </div>
         )}
       </ul>
