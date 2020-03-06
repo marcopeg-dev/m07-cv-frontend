@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useBackend } from "../state/use-backend";
 import { updateUser } from "../state/update-user";
 
 const EditView = ({ match }) => {
-  const cleanFormState = { name: "", surname: "", profile_pic: "" };
+  const initialFormValues = { name: "", surname: "", profile_pic: "" };
   const { uname } = match.params;
   const { data } = useBackend(uname);
   const user = { ...data };
-  const [edit, setEdit] = useState(cleanFormState);
+  const [edit, setEdit] = useState(initialFormValues);
+
 
   const onChange = event => {
     const { name, value } = event.target;
@@ -17,8 +18,17 @@ const EditView = ({ match }) => {
 
   const onSubmit = event => {
     event.preventDefault();
-    updateUser(uname, edit);
-    setEdit(cleanFormState);
+
+    if (edit.surname !== "") {
+      user.surname = edit.surname
+    } if (edit.name !== "") {
+      user.name = edit.name
+    } if (edit.profile_pic !== "") {
+      user.profile_pic = edit.profile_pic
+    }
+
+    updateUser(uname, user);
+    setEdit(initialFormValues);
   };
 
   return (
