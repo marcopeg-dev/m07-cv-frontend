@@ -8,7 +8,7 @@ const EditView = ({ match }) => {
   const { uname } = match.params;
   const { data } = useBackend(uname);
   const user = { ...data };
-  const [edit, setEdit] = useState({ user });
+  const [edit, setEdit] = useState(cleanFormState);
 
   const onChange = event => {
     const { name, value } = event.target;
