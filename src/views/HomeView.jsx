@@ -4,7 +4,7 @@ import { UsersList } from "../state/use-users-list";
 
 const HomeView = ({ uname }) => {
   const { users } = UsersList(uname);
-  var filteredUsers = users.filter(user => user.id !== "undefined");
+  const filteredUsers = users.filter(user => user.id !== "undefined");
 
   return (
     <div>
