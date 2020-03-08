@@ -4,7 +4,7 @@ import "./index.css";
 
 const Users = ({ userId, name, surname, profilePic }) => (
   <div className="view__users">
-    <Link to={`/${userId}`}>
+    <Link className="users_name" to={`/${userId}`}>
       <li className="user__list">
         <img
           className="img__user"

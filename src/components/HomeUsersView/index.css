@@ -38,3 +38,6 @@ ul {
   justify-content: space-between;
   margin-bottom: 5px;
 }
+.users_name{
+text-decoration: none;
+}
