@@ -1,27 +1,33 @@
-.users-list__li{
-  list-style: none;
-  display: flex;
- align-items: center;
-  justify-content: space-between;
-  margin-bottom: 5px;
-}
-
-.users-list__img {
-  height: 6rem;
-  width: 6rem;
-  border-radius: 50%;
-  border: 2px solid #04a9e0;
-}
-
 .users-list__h2 {
   font-family: "Arial", "Open Sans";
   color: #828282;
 text-transform: capitalize;
+text-align: left;
+}
+
+.users-list__li{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+a:link, a:visited {
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+
+}
+.users-list__img {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  border: 2px solid #04a9e0;
 }
 
 .users-list__div{
   display: grid;
-  margin-right: 30px;
+  margin-left: 2rem;
   border: solid 1px rgb(241, 241, 241);
   background-color: #f4f4f4;
   border-radius: 15% / 50%;
@@ -30,8 +36,12 @@ text-transform: capitalize;
 
 .users-list__container {
   display: grid;
-  grid-row-gap: 40px;
-  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
-  padding: 20px;
+  grid-row-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, 22rem);
+  padding: 0;
+  margin: 1.5rem 0;
 }
 
+.users-list__playbutton {
+    size: 5rem;
+}

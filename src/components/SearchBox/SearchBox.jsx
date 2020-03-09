@@ -2,10 +2,10 @@ import React from "react";
 
 const SearchBox = ({ searchInput, searchChanges, focusSearch }) => {
   const styleInput = {
-    width: "33%",
+    width: "280px",
     border: "2px solid #ccc",
     borderRadius: "5px",
-    marginLeft: "20px",
+    marginLeft: "2.3rem",
     padding: "5px",
 
 
