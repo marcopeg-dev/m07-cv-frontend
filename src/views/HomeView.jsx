@@ -5,12 +5,13 @@ import LoadingIndicator from "../components/LoadingIndicator";
 
 const HomeView = ({ uname }) => {
   const { users } = UsersList(uname);
+  const filteredUsers = users.filter(user => user.id !== "undefined");
 
   return (
     <div>
       <ul>
-        {users.length > 0 ? (
-          users.map(user => (
+        {filteredUsers.length > 0 ? (
+          filteredUsers.map(user => (
             <Users
               key={user.id}
               userId={user.id}
@@ -20,10 +21,10 @@ const HomeView = ({ uname }) => {
             />
           ))
         ) : (
-            <div>
-              <h2 className="site-heading">{<LoadingIndicator />}</h2>
-            </div>
-          )}
+          <div>
+            <h2 className="site-heading">{<LoadingIndicator />}</h2>
+          </div>
+        )}
       </ul>
     </div>
   );

@@ -1,41 +1,72 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { UsersList } from '../state/use-users-list'
+import { useBackend } from "../state/use-backend";
+import { updateUser } from "../state/update-user";
 
-const EditView = ({ match, children, uname }) => {
-
-  const { users } = UsersList(uname);
-  const initalFormState = {}
-  const [value, setValue] = useState('hi')
+const EditView = ({ match }) => {
+  const cleanFormState = { name: "", surname: "", profile_pic: "" };
+  const { uname } = match.params;
+  const { data } = useBackend(uname);
+  const user = { ...data };
+  const [edit, setEdit] = useState(cleanFormState);
 
   const onChange = event => {
-    const newValue = event.target.value;
-    setValue([...value, newValue])
-    console.log(value)
-  }
+    const { name, value } = event.target;
+    setEdit({ ...edit, [name]: value });
+  };
 
   const onSubmit = event => {
-    event.preventDefault()
-    console.log(value)
-  }
-  console.log(users)
-
+    event.preventDefault();
+    updateUser(uname, edit);
+    setEdit(cleanFormState);
+  };
 
   return (
     <div>
-      <div>
-        <h3>edit {match.params.uname}</h3>
-        <form onSubmit={onSubmit} >
-          <label>Name
-            <input name='name' type="text" onChange={onChange} placeholder={match.params.name}></input>
-          </label>
-          <label>Surname
-            <input name='name' type="text" onChange={onChange} placeholder={match.params.surname}></input>
-          </label>
-          < button >Save</button>
-        </form>
-        <Link to={`/${match.params.uname}`}>View profile</Link></div>
-    </div >
+      <h2 className="edit-profile__heading">Edit user: {match.params.uname}</h2>
+      <h4 className="edit-profile__user-name">Name: {user.name}</h4>
+      <h4 className="edit-profile__user-name">Surname: {user.surname}</h4>
+      <Link className="edit-profile__link" to={`/${match.params.uname}`}>
+        Cancel
+      </Link>
+      <form onSubmit={onSubmit}>
+        <label className="edit-profile__label">Name: </label>
+        <input
+          value={edit.name}
+          className="edit-profile__input"
+          name="name"
+          onChange={onChange}
+        ></input>
+        <br />
+        <label className="edit-profile__label">Surname: </label>
+        <input
+          className="edit-profile__input"
+          name="surname"
+          value={edit.surname}
+          onChange={onChange}
+        ></input>
+        <br />
+        <label className="edit-profile__label">
+          Image (Please provide URL):{" "}
+        </label>
+        <input
+          className="edit-profile__input"
+          name="profile_pic"
+          value={edit.profile_pic}
+          onChange={onChange}
+        ></input>
+        <br />
+        <button className="edit-profile__update--btn" type="submit">
+          Save Profile
+        </button>
+      </form>
+      <Link className="edit-profile__link" to={`/${match.params.uname}`}>
+        View profile
+      </Link>
+      <Link className="edit-profile__link" to={`/`}>
+        Go home
+      </Link>
+    </div>
   );
 };
 
