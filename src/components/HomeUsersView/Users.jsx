@@ -9,7 +9,7 @@ const Users = ({ userId, name, surname, profilePic }) => (
         <img
           className="home-view__img"
           src={profilePic}
-          alt={`${name}'s profile pic`}
+          alt={`${name.charAt(0)}${surname.charAt(0)}`}
         />
         <h2>
           {name} <br />
