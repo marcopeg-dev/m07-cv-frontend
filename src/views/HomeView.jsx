@@ -1,31 +1,37 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { UsersList } from "../state/use-users-list";
-import Users from "../components/HomeUsersView";
-import LoadingIndicator from "../components/LoadingIndicator";
+import SearchBox from "../components/SearchBox/SearchBox";
+import UsersListLayout from "../layouts/HomeViewLayout/UsersListLayout";
 
 const HomeView = ({ uname }) => {
   const { users } = UsersList(uname);
-  const filteredUsers = users.filter(user => user.id !== "undefined");
+  const [searchInput, setSearchInput] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const focusSearch = useRef(null)
+
+  // useEffect - FOCUS ON SEARCH INPUT
+  useEffect(() => { focusSearch.current.focus() }, [])
+
+  const handleChange = e => {
+    setSearchInput(e.target.value);
+  };
+  //I’ve trying to figure it out if it’s possible to managing the state outside the home view.jsx. But couldn't make it
+
+  useEffect(() => {
+    const filteredUsers = users.filter(user => {
+      return (
+        user.name.toString().toLowerCase().includes(searchInput) ||
+        user.surname.toString().toLowerCase().includes(searchInput)
+      );
+    });
+    setSearchResults(filteredUsers);
+  }, [users, searchInput]);
 
   return (
     <div>
-      <ul>
-        {filteredUsers.length > 0 ? (
-          filteredUsers.map(user => (
-            <Users
-              key={user.id}
-              userId={user.id}
-              name={user.name}
-              surname={user.surname}
-              profilePic={user.profile_pic}
-            />
-          ))
-        ) : (
-          <div>
-            <h2 className="site-heading">{<LoadingIndicator />}</h2>
-          </div>
-        )}
-      </ul>
+      <SearchBox searchChanges={handleChange} focusSearch={focusSearch} />
+      <UsersListLayout props={searchResults} />
+
     </div>
   );
 };
