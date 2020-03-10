@@ -16,10 +16,10 @@ const ProfileViewLayout = ({ uname, error, children }) => {
 
   return (
     <div>
-      <h2 className="profile-view__heading">profile- {uname}</h2>
+      <h2 className="profile-view__heading">Profile: {uname}</h2>
       <div>{children}</div>
       <hr />
-      <ul>
+      <ul className="profile-view__link-list">
         {editOption()}
         <li>
           <Link className="profile-view__link" to={`/`}>

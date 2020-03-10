@@ -1,9 +1,9 @@
 import React from "react";
 
-const ProfileUI = ({ name, surname, profile_pic }) => (
+const ProfileUI = ({ name, surname, profile_pic: profilePic }) => (
   <div>
     <div className="profile-view__background">
-      <img src={profile_pic} className="profile-view__image" />
+      <img src={profilePic} className="profile-view__image" />
       <h2 className="profile-view__title">
         {name} {surname}
       </h2>

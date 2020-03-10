@@ -84,8 +84,7 @@
   background: url(https://img.lemde.fr/2019/04/22/0/191/1619/1079/688/0/60/0/e39da8d_2FIads9h8wB-0SwSgxVaVWsp.jpg)
     lightgrey top center no-repeat;
   background-size: 300px, contain;
-  margin-top: 70px;
-  margin-left: 100px;
+  margin-left: 50px;
   display: flex;
   justify-content: center;
   width: 300px;
@@ -111,4 +110,19 @@
 
 .profile-view_heading {
   color: #2f4f4f;
+}
+
+.profile-view__link-list {
+  list-style: none;
+  display: flex;
+}
+.profile-view__link {
+  font-family: Helvetica, sans-serif;
+  margin-right: 20px;
+  margin-left: 30px;
+  background-color: lightskyblue;
+  font-weight: bold;
+  border-radius: 5px 20px 5px;
+  width: 100px;
+  height: 40px;
 }
