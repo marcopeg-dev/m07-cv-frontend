@@ -31,6 +31,7 @@ const HomeView = ({ uname }) => {
     <div>
       <SearchBox searchChanges={handleChange} focusSearch={focusSearch} />
       <UsersListLayout props={searchResults} />
+
     </div>
   );
 };

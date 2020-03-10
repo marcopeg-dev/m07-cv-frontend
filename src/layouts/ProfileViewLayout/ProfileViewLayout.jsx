@@ -6,7 +6,9 @@ const ProfileViewLayout = ({ uname, error, children }) => {
     if (!error) {
       return (
         <li>
-          <Link to={`/${uname}/edit`}>Edit profile</Link>
+          <Link className="profile-view__link" to={`/${uname}/edit`}>
+            Edit profile
+          </Link>
         </li>
       );
     }
@@ -18,7 +20,9 @@ const ProfileViewLayout = ({ uname, error, children }) => {
       <ul>
         {editOption()}
         <li>
-          <Link to={`/`}>go home</Link>
+          <Link className="profile-view__link" to={`/`}>
+            go home
+          </Link>
         </li>
       </ul>
       <hr />
