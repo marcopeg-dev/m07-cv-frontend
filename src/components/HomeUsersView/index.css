@@ -1,4 +1,4 @@
-.img__user {
+.home-view__img {
  height: 90px;
     width: 90px;
     border-radius: 50%;
@@ -38,6 +38,6 @@ ul {
   justify-content: space-between;
   margin-bottom: 5px;
 }
-.users_name{
+.home-view__user-name{
 text-decoration: none;
 }
