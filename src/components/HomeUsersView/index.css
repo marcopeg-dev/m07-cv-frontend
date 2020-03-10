@@ -1,10 +1,10 @@
-.img__user {
-  height: 90px;
-  width: 90px;
-  border-radius: 50%;
-  border: 2px solid #04a9e0;
-
-
+.home-view__img {
+ height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    border: 2px solid #828282;
+    margin-top: 17px;
+    margin-left: 10px;
 }
 
 h2 {
@@ -37,4 +37,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 5px;
+}
+.home-view__user-name{
+text-decoration: none;
 }
