@@ -11,7 +11,7 @@ text-align: left;
   align-items: center;
   justify-content: space-between;
 }
-a:link, a:visited {
+.users-list__link {
   color: black;
   padding: 10px 20px;
   text-align: center;

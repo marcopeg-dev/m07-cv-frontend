@@ -5,7 +5,7 @@ import "./UserListView.css";
 
 const UserListView = ({ name, surname, profilePic, userId }) => {
   return (<div className="users-list__div">
-    <Link to={`/${userId}`}>
+    <Link className="user-list__link" to={`/${userId}`}>
       <li className="users-list__li">
         <img className="users-list__img" src={profilePic} alt={`${name}'s profile pic`} />
         <h2 className="users-list__h2">
