@@ -41,3 +41,10 @@ ul {
 .home-view__user-name{
 text-decoration: none;
 }
+
+img.home-view__img {
+    background-image: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
+    font-size: 42px;
+    color:darkslateblue;
+    font-weight:600
+}
