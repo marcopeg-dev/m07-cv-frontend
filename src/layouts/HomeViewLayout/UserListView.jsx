@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import "./UserListView.css";
 
 
+
+
+
 const UserListView = ({ name, surname, profilePic, userId }) => {
   return (<div className="users-list__div">
     <Link className="user-list__link" to={`/${userId}`}>
       <li className="users-list__li">
-        <img className="users-list__img" src={profilePic} alt={`${name}'s profile pic`} />
+        <img className="users-list__img" src={profilePic} alt={`${name.charAt(0)}${surname.charAt(0)}`} />
         <h2 className="users-list__h2">
           {name} <br />
           {surname}

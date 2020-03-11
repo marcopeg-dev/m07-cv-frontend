@@ -45,3 +45,10 @@ text-align: left;
 .users-list__playbutton {
     size: 5rem;
 }
+
+img.users-list__img {
+    background-image: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
+    font-size: 42px;
+    color:darkslateblue;
+    font: weight 500
+}
