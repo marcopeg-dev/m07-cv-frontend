@@ -34,12 +34,12 @@
   font-size: 20px;
   display: flex;
   color: darkslategrey;
-  margin-right: 20px;
-  margin-bottom: 10px;
+  margin-left: 13px;
 }
 
 .edit-profile__input {
-  margin: 10px;
+  margin: 3px 0px 20px 10px;
+  margin-bottom: 20px;
   height: 25px;
   border-radius: 4px;
 }
@@ -66,6 +66,15 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
+}
+
+.edit-profile__errorMessage {
+    font-size: 14px;
+    font-family: Helvetica, sans-serif;
+    color: red;
+    font-style: italic;
+    margin-left: 15px;
+    margin-top: 0px;
 }
 
 .profile-view__link,
