@@ -10,6 +10,7 @@ text-align: left;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0px 15px;
 }
 .users-list__link {
   color: black;
@@ -23,6 +24,7 @@ text-align: left;
   width: 5rem;
   border-radius: 50%;
   border: 2px solid #04a9e0;
+  margin-left: 11px;
 }
 
 .users-list__div{
@@ -44,4 +46,7 @@ text-align: left;
 
 .users-list__playbutton {
     size: 5rem;
+}
+.user-list__link{
+    text-decoration: none;
 }

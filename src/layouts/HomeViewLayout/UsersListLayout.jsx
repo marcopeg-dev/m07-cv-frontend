@@ -7,7 +7,7 @@ const UsersListLayout = ({ props }) => {
   return (
     <ul className="users-list__container">
       {
-        props.map(user => (user.id !== "undefined" && (
+        props.map(user => (user.id !== "undefined" && user.name !== "" && (
           <UserListView
             key={user.id}
             userId={user.id}
