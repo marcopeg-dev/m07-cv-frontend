@@ -6,7 +6,8 @@ import "./UserListView.css";
 
 const UsersListLayout = ({ props }) => {
   return (
-    <ul className="users-list__container">
+    <>
+     <ul className="users-list__container">
       {
         props.map(user => (user.id !== "undefined" && (
           <UserListView
@@ -22,6 +23,7 @@ const UsersListLayout = ({ props }) => {
     <Link className="profile-view__link" to={`/add`}>
       add new user
     </Link>
+    </>
   );
 }
 
