@@ -19,7 +19,7 @@ export const useAddUser = (validate) => {
 
   const putData = () => {
     setIsLoading(true)
-    fetch(`https://m07.herokuapp.com/`, {
+    fetch(`https://m07.herokuapp.com/${newUser.name}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
