@@ -1,5 +1,6 @@
 import React from "react";
 //import LoadingIndicator from "../../components/LoadingIndicator";
+import { Link } from "react-router-dom";
 import UserListView from "./UserListView";
 import "./UserListView.css";
 
@@ -18,6 +19,9 @@ const UsersListLayout = ({ props }) => {
         )))
       }
     </ul>
+    <Link className="profile-view__link" to={`/add`}>
+      add new user
+    </Link>
   );
 }
 
