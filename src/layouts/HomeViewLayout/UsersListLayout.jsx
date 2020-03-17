@@ -1,11 +1,13 @@
 import React from "react";
 //import LoadingIndicator from "../../components/LoadingIndicator";
+import { Link } from "react-router-dom";
 import UserListView from "./UserListView";
 import "./UserListView.css";
 
 const UsersListLayout = ({ props }) => {
   return (
-    <ul className="users-list__container">
+    <>
+     <ul className="users-list__container">
       {
         props.map(user => (user.id !== "undefined" && (
           <UserListView
@@ -18,6 +20,10 @@ const UsersListLayout = ({ props }) => {
         )))
       }
     </ul>
+    <Link className="profile-view__link" to={`/add`}>
+      add new user
+    </Link>
+    </>
   );
 }
 
