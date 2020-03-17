@@ -6,7 +6,6 @@ html {
 
 body {
   display: grid;
-  overflow: hidden;
   font-family: "Lato", sans-serif;
   text-transform: uppercase;
   text-align: center;
