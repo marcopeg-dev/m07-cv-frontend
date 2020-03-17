@@ -10,6 +10,7 @@ text-align: left;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0px 15px;
 }
 .users-list__link {
   color: black;
