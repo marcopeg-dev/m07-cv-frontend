@@ -12,10 +12,12 @@ import HomeView from "./views/HomeView";
 
 export default function App() {
   return (
-    <Router>
-      <Route exact path="/:uname/edit" component={EditView} />
-      <Route exact path="/:uname" component={ProfileView} />
-      <Route exact path="/" component={HomeView} />
-    </Router>
+    <div className="app">
+      <Router>
+        <Route exact path="/:uname/edit" component={EditView} />
+        <Route exact path="/:uname" component={ProfileView} />
+        <Route exact path="/" component={HomeView} />
+      </Router>
+    </div>
   );
 }
