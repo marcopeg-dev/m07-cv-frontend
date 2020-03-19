@@ -1,0 +1,70 @@
+
+.profile-view__background{
+	width: 360px;
+	height: 500px;
+	background: #FFF;
+	border-radius: 6px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	box-shadow: 0px 1px 10px 1px #000;
+	overflow: hidden;
+	/* display: inline-block; */
+}
+
+.upper-container{
+  height: 180px;
+  background: url(https://1001freedownloads.s3.amazonaws.com/vector/thumb/314683/b222ae21476b576a590f86d1e0fcd98a-glossy-abstract-colorful-squares-background.jpg);
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: 0px 0px 5px 1px rgb(20, 19, 20);
+
+}
+
+ .profile-view__image img{ /* profile image */
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}
+.profile-view__image{ /* profile image */
+	background: rgb(47, 214, 236);
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	padding: 1px;
+	transform: translate(120px,120px);
+}
+
+.profile-view__link{ /* edit profile button */
+  padding: 12px 20px;
+	background: #7F00FF;
+	border: none;
+	color: white;
+	border-radius: 30px;
+	font-size: 12px;
+	text-decoration: none;
+	font-weight: bold;
+	transition: all .3s ease-in;
+
+}
+.profile-view__link:hover{ /* edit profile button */
+	background: transparent;
+	color: #7F00FF;
+	border: 2px solid #7F00FF;
+}
+
+.profile-view__link-list{
+  list-style: none;
+  padding: 20px;
+}
+
+.profile-view__title{
+	color: #7F00FF;
+	font-weight: bold;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: Helvetica;
+    margin-top: 220px;
+
+}
+

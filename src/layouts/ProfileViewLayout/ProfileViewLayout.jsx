@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./ProfileViewLayout.css"
 
 const ProfileViewLayout = ({ uname, error, children }) => {
   const editOption = () => {
     if (!error) {
       return (
         <li>
-          <Link className="profile-view__link" to={`/${uname}/edit`}>
+          {/*  <Link className="profile-view__link" to={`/${uname}/edit`}>
             Edit profile
-          </Link>
+          </Link> */}
         </li>
       );
     }
@@ -21,11 +22,11 @@ const ProfileViewLayout = ({ uname, error, children }) => {
       <hr />
       <ul className="profile-view__link-list">
         {editOption()}
-        <li>
+        {/*         <li>
           <Link className="profile-view__link" to={`/`}>
             go home
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
