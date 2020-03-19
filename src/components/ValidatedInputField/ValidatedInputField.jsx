@@ -39,7 +39,6 @@ const ValidatedInputField = forwardRef((props, ref) => {
       {props.label && <label className="edit-profile__label">{props.label}</label>}
       <input
         className="edit-profile__input"
-        //placeholder={props.placeholder}
         name={props.name}
         onChange={(event) => handleChange(event)}
         type={props.type}
@@ -54,7 +53,6 @@ const ValidatedInputField = forwardRef((props, ref) => {
 
 ValidatedInputField.defaultProps = {
   label: "",
-  placeholder: "",
   name: "",
   type: "",
   value: "",

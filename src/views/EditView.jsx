@@ -7,6 +7,30 @@ const EditView = ({ match }) => {
   const inputRefs = useRef([createRef(), createRef(), createRef()]);
   const { uname } = match.params;
   const { user, edit, onChange, onSubmit } = useUpdateUser({ name: "", surname: "", profile_pic: "" }, uname);
+
+  const submitValidForm = (event) => {
+
+    let allValid = true;
+
+    for (let i = 0; i < inputRefs.current.length; i++) {
+      const valid = inputRefs.current[i].current.validate();
+      console.log("valid: " + valid);
+      if (!valid) {
+        allValid = false;
+      }
+    }
+
+    if (!allValid) {
+      console.log("**FORM IS incorrect**");
+      event.preventDefault();
+
+    } else {
+      console.log("**FORM IS CORRECT**");
+      onSubmit(event);
+
+    }
+  }
+
   return (
     <div>
       <h2 className="edit-profile__heading">Edit user: {match.params.uname}</h2>
@@ -15,15 +39,16 @@ const EditView = ({ match }) => {
       <Link className="edit-profile__link" to={`/${match.params.uname}`}>
         Cancel
       </Link>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={submitValidForm}>
         <ValidatedInputField
           className="edit-profile__input"
           type="text"
-          name="ame"
+          name="name"
           label="Name:"
           value={edit.name}
           onChange={onChange}
           ref={inputRefs.current[0]}
+          validation={"required|not null"}
         ></ValidatedInputField>
         <br />
         <ValidatedInputField
