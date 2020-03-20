@@ -1,5 +1,5 @@
 import React from "react";
-import { useBackend } from "../state/use-backend";
+import { useUserDetails } from "../state/use-users-details";
 
 /**
  * LAYOUTS
@@ -17,7 +17,7 @@ import ProfileUI from "../components/ProfileUI";
 
 const ProfileView = ({ match }) => {
   const { uname } = match.params;
-  const { data, error, isLoading } = useBackend(uname);
+  const { data, error, isLoading } = useUserDetails(uname);
 
   const createBody = () => {
     if (isLoading) return <LoadingIndicator />;
