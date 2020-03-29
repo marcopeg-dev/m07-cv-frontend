@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useUpdateUser from "../state/update-user";
+
 const EditView = ({ match }) => {
   const { uname } = match.params;
   const { user, edit, onChange, onSubmit } = useUpdateUser({ name: "", surname: "", profile_pic: "" }, uname);
+
+  const submitForm = (event) => {
+    event.preventDefault();
+    onSubmit(event);
+  }
+
   return (
     <div>
       <h2 className="edit-profile__heading">Edit user: {match.params.uname}</h2>
@@ -12,29 +19,34 @@ const EditView = ({ match }) => {
       <Link className="edit-profile__link" to={`/${match.params.uname}`}>
         Cancel
       </Link>
-      <form onSubmit={onSubmit}>
-        <label className="edit-profile__label">Name: </label>
+      <form onSubmit={submitForm}>
+        <label className="edit-profile__label">Name:</label>
         <input
-          value={edit.name}
           className="edit-profile__input"
+          type="text"
           name="name"
+          value={edit.name}
           onChange={onChange}
+          required
+          pattern="[a-zA-Z]*"
         ></input>
         <br />
-        <label className="edit-profile__label">Surname: </label>
+        <label className="edit-profile__label">Surname:</label>
         <input
           className="edit-profile__input"
+          type="text"
           name="surname"
           value={edit.surname}
           onChange={onChange}
+          required
+          pattern="[a-zA-Z]*"
         ></input>
         <br />
-        <label className="edit-profile__label">
-          Image (Please provide URL):{" "}
-        </label>
+        <label className="edit-profile__label">Image (please provide URL):</label>
         <input
           className="edit-profile__input"
-          name="profile_pic"
+          type="url"
+          name="url"
           value={edit.profile_pic}
           onChange={onChange}
         ></input>
