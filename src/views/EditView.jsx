@@ -1,34 +1,14 @@
-import React, { useState, useRef, createRef } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useUpdateUser from "../state/update-user";
-import ValidatedInputField from "../components/ValidatedInputField/ValidatedInputField"
 
 const EditView = ({ match }) => {
-  const inputRefs = useRef([createRef(), createRef(), createRef()]);
   const { uname } = match.params;
   const { user, edit, onChange, onSubmit } = useUpdateUser({ name: "", surname: "", profile_pic: "" }, uname);
 
-  const submitValidForm = (event) => {
-
-    let allValid = true;
-
-    for (let i = 0; i < inputRefs.current.length; i++) {
-      const valid = inputRefs.current[i].current.validate();
-      console.log("valid: " + valid);
-      if (!valid) {
-        allValid = false;
-      }
-    }
-
-    if (!allValid) {
-      console.log("**FORM IS incorrect**");
-      event.preventDefault();
-
-    } else {
-      console.log("**FORM IS CORRECT**");
-      onSubmit(event);
-
-    }
+  const submitForm = (event) => {
+    event.preventDefault();
+    onSubmit(event);
   }
 
   return (
@@ -39,38 +19,37 @@ const EditView = ({ match }) => {
       <Link className="edit-profile__link" to={`/${match.params.uname}`}>
         Cancel
       </Link>
-      <form onSubmit={submitValidForm}>
-        <ValidatedInputField
+      <form onSubmit={submitForm}>
+        <label className="edit-profile__label">Name:</label>
+        <input
           className="edit-profile__input"
           type="text"
           name="name"
-          label="Name:"
           value={edit.name}
           onChange={onChange}
-          ref={inputRefs.current[0]}
-          validation={"required|not null"}
-        ></ValidatedInputField>
+          required
+          pattern="[a-zA-Z]*"
+        ></input>
         <br />
-        <ValidatedInputField
+        <label className="edit-profile__label">Surname:</label>
+        <input
           className="edit-profile__input"
           type="text"
           name="surname"
-          label="Surname:"
           value={edit.surname}
           onChange={onChange}
-          ref={inputRefs.current[1]}
-          validation={"required|not null"}
-        ></ValidatedInputField>
+          required
+          pattern="[a-zA-Z]*"
+        ></input>
         <br />
-        <ValidatedInputField
+        <label className="edit-profile__label">Image (please provide URL):</label>
+        <input
           className="edit-profile__input"
           type="url"
           name="url"
-          label="Image (please provide URL):"
           value={edit.profile_pic}
           onChange={onChange}
-          ref={inputRefs.current[2]}
-        ></ValidatedInputField>
+        ></input>
         <br />
         <button className="edit-profile__update--btn" type="submit">
           Save Profile

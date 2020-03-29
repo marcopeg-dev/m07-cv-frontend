@@ -20,11 +20,11 @@ const useUpdateUser = (initState, uname) => {
   const onSubmit = (event) => {
     if (event) event.preventDefault();
     makeCall();
-    setEdit(initState)
   }
 
   const onChange = (event) => {
     event.persist();
+    console.log("onChange" + event.target.value)
     setEdit(edit => ({ ...edit, [event.target.name]: event.target.value }));
   }
   return {
